@@ -2,6 +2,7 @@ package com.tdurko.parking.service;
 
 import com.tdurko.parking.model.Parking;
 import com.tdurko.parking.repository.ParkingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Optional;
  */
 @Service
 public class ParkingService {
+    @Autowired
     private ParkingRepository parkingRepository;
 
     public ParkingService(ParkingRepository parkingRepository)
