@@ -35,13 +35,15 @@ public class ParkingController {
     ResponseEntity startParkingMeter(@Valid @RequestBody Parking input, BindingResult bindingResult)
     {
         ResponseEntity responseEntity;
-        input.setParkingStart(LocalDateTime.now());
+
         if(bindingResult.hasErrors())
         {
             responseEntity=new ResponseEntity("Bad parking request", HttpStatus.BAD_REQUEST);
         }
         else
         {
+            input.setParkingStart(LocalDateTime.now());
+            input.setParks(true);
             responseEntity= new ResponseEntity(input, HttpStatus.OK);
             parkingService.addParkingMeter(input);
 

@@ -5,6 +5,9 @@ package com.tdurko.parking.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Currency;
 
@@ -17,6 +20,7 @@ public class Parking {
     @GeneratedValue
     private long id;
 
+    @NotNull
     private boolean vip;
 
     private boolean parks;
@@ -34,15 +38,9 @@ public class Parking {
     public Parking()
     {}
 
-    public Parking(boolean vip, boolean parks,double payment, long duration, LocalDateTime parkingStart, LocalDateTime parkingStop,Currency currency)
+    public Parking(boolean vip)
     {
         this.vip = vip;
-        this.parks= parks;
-        this.parkingStart=parkingStart;
-        this.parkingStop =parkingStop;
-        this.duration=duration;
-        this.payment=payment;
-        this.currency=currency;
     }
 
     public long getId()
