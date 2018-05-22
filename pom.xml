@@ -5,10 +5,9 @@
 
 	<groupId>com.tdurko</groupId>
 	<artifactId>parking</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
-	<name>parking</name>
+	<version>1.0.1</version>
+	<packaging>war</packaging>
+	<name>start</name>
 	<description>Projekt zarzadzania parkingiem</description>
 
 	<parent>
@@ -52,22 +51,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<artifactId>exec-maven-plugin</artifactId>
-				<groupId>org.codehaus.mojo</groupId>
-				<executions>
-					<execution><!-- Run our version start script -->
-						<id>Version Calculation</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>${basedir}/scripts/start.sh</executable>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+
 		</plugins>
 
 	</build>
