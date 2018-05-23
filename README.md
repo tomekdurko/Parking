@@ -1,4 +1,4 @@
-# Movies
+# Parking
 Aplikacja REST z wykorzystaniem javy do obsługi parkingu miejskiego
 <h2>Technologie</h2>
 <ul>
