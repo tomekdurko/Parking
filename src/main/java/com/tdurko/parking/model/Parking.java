@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Currency;
 
@@ -25,7 +26,7 @@ public class Parking {
 
     private boolean parks;
 
-    private double payment;
+    private int payment;
 
     private long duration;
 
@@ -60,7 +61,7 @@ public class Parking {
         return currency;
     }
 
-    public void setPayment(double payment) {
+    public void setPayment(int payment) {
         this.payment = payment;
     }
 
@@ -76,7 +77,7 @@ public class Parking {
         this.vip = vip;
     }
 
-    public double getPayment() {
+    public int getPayment() {
         return payment;
     }
 

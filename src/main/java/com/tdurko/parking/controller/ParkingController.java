@@ -80,7 +80,7 @@ public class ParkingController {
         }
         else
         {
-            responseEntity= new ResponseEntity("You have to pay: " + parking.get().getPayment() + " " +parking.get().getCurrency() + " for " +parking.get().getDuration() + " minutes of parking"  , HttpStatus.OK);
+            responseEntity= new ResponseEntity("You have to pay: " + (double)parking.get().getPayment()/10 + " " +parking.get().getCurrency() + " for " +parking.get().getDuration() + " minutes of parking"  , HttpStatus.OK);
         }
         return responseEntity;
     }
@@ -106,31 +106,31 @@ public class ParkingController {
                 if(parking.isVip())
                     parking.setPayment(0);
                 else
-                    parking.setPayment(1);
+                    parking.setPayment(10);
             }
             else if (durationLong<=120)
             {
                 if(parking.isVip())
-                    parking.setPayment(2);
+                    parking.setPayment(20);
                 else
-                    parking.setPayment(3);
+                    parking.setPayment(30);
             }
             else
             {
                 durationLong-=120;
-                double lastHour=2;
-                double sumVip=2;
-                double sumNotVip=3;
+                int lastHour=20;
+                int sumVip=20;
+                int sumNotVip=30;
                 while(durationLong>0)
                 {
                     if(parking.isVip())
                     {
-                        lastHour*=1.2;
+                        lastHour*=12;
                         sumVip+=lastHour;
                     }
                     else
                         {
-                            lastHour *= 1.5;
+                            lastHour *= 15;
                             sumNotVip+=lastHour;
                     }
                     durationLong-=60;
